@@ -83,17 +83,14 @@ export const HONORS = [
   { big: 'Apps on Google Play & App Store', small: 'Levven · Stash · MyMilan' },
 ];
 
-/* The corridor: one lit doorway per role, oldest first */
+/* The corridor: one lit doorway per role, newest first */
 export const JOURNEY = [
-  { year: '2011', role: 'Android Developer — Mobile Games', place: 'NETAXIS IT Solution · Chennai', note: '2011 — 2013 · Unity 3D, OpenGL ES, Cocos2d · gaming site with 1,000+ games' },
-  { year: '2013', role: 'Senior Android Developer / Mobile Team Lead', place: 'Eloka Enterprises (Milanity) · Chennai', note: '2013 — 2016 · MyMilan home automation · Milan Symphony streaming · Samsung Smart TV app' },
-  { year: '2017', role: 'Android & Web Developer', place: 'WebsZilla Technology · Chennai', note: '2017 — 2018 · Parent & Student apps for private schools · PHP admin panel' },
-  { year: '2018', role: 'Senior Mobile Developer', place: 'ThruLiquid Inc · Toronto', note: '2018 · Android, iOS & web with Ionic, React and Node.js' },
-  { year: '2019', role: 'Senior Android Developer — Security & NFC', place: 'Elsi Inc (Stash) · Edmonton', note: '2019 — 2021 · Offline NFC password manager · AES, RSA, SHA-256' },
-  { year: '2021', role: 'Senior Mobile Application Developer', place: 'Levven Electronics · Edmonton', note: '2021 — 2024 · Smart-home app · BLE, Wi-Fi sockets, AWS · mentoring' },
-  { year: '2024', role: 'Senior Mobile Developer & AI Consultant', place: 'ThruLiquid Inc · Mississauga', note: '2024 — 2026 · Private RAG assistants · Kotlin & React Native apps' },
-  { year: '2026', role: 'Senior Embedded Firmware & Mobile Engineer', place: 'DBTech · Texas (remote)', note: '2026 — present · FASTER BLE Mesh wearable · STM32WB55 · Android · Supabase' },
-  { year: '2026', role: 'Red Cross Demo — FASTER without a phone', place: 'DBTech · FASTER', note: 'Phone-free registration · 4 bands across 3 gateway zones · nearest-station estimates with confidence · keeps working offline' },
+  { year: '2026', role: 'Senior Embedded Firmware & Mobile Engineer', place: 'DBTech · Texas (remote)', note: '2026 — present · FASTER safety wearable, firmware to cloud', tech: ['STM32WB55 · C', 'BLE Mesh', 'OTA Bootloader', 'Kotlin · Room', 'Supabase'] },
+  { year: '2026', role: 'Red Cross Demo — FASTER without a phone', place: 'DBTech · FASTER', note: 'Phone-free registration · 4 bands across 3 gateway zones', tech: ['USB Gateways', 'RSSI Zoning', 'Confidence Estimates', 'Offline-tolerant'] },
+  { year: '2024', role: 'Senior Mobile Developer & AI Consultant', place: 'ThruLiquid Inc · Mississauga', note: '2024 — 2026 · Private, on-premise AI assistants', tech: ['RAG', 'Pinecone', 'GPT-4o · LLaMA 3', 'Node.js · TypeScript', 'Kotlin · React Native'] },
+  { year: '2021', role: 'Senior Mobile Application Developer', place: 'Levven Electronics · Edmonton', note: '2021 — 2024 · Smart-home control app · mentoring', tech: ['Flutter', 'Kotlin', 'BLE', 'Wi-Fi Sockets', 'AWS', 'OTA'] },
+  { year: '2019', role: 'Senior Android Developer — Security & NFC', place: 'Elsi Inc (Stash) · Edmonton', note: '2019 — 2021 · Offline NFC password manager', tech: ['NFC', 'AES', 'RSA', 'SHA-256', 'Android'] },
+  { year: '2018', role: 'Senior Mobile Developer', place: 'ThruLiquid Inc · Toronto', note: '2018 · Android, iOS & web apps', tech: ['Ionic', 'React', 'Node.js', 'REST APIs'] },
 ];
 
 /* Orbiting cards: products built across the career */

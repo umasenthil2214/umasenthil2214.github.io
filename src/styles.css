@@ -1168,3 +1168,49 @@ a.resume {
     padding: 0.4rem 0.8rem;
   }
 }
+
+/* journey: highlighted tech tags */
+.jy-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.3rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.jy-tech li {
+  padding: 0.42rem 0.85rem;
+  border: 1px solid rgba(216, 192, 143, 0.45);
+  border-radius: 99px;
+  background: rgba(216, 192, 143, 0.08);
+  color: #ead9b4;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+.pnl.on .jy-tech li {
+  opacity: 1;
+  transform: none;
+}
+.jy-note {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 1.1rem;
+}
+.jy-year {
+  margin-bottom: 1.1rem;
+}
+@media (max-width: 760px) {
+  .jy-tech {
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+  .jy-tech li {
+    font-size: 9.5px;
+    padding: 0.35rem 0.7rem;
+  }
+}

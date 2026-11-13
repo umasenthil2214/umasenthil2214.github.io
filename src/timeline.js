@@ -8,9 +8,9 @@ export const L = {
   m: [new THREE.Vector3(-1.9, 0, -62), new THREE.Vector3(1.9, 0, -80), new THREE.Vector3(-1.9, 0, -98), new THREE.Vector3(1.9, 0, -116)],
   skills: new THREE.Vector3(0, 1, -146),
   towers: -178,
-  arches: [-203, -218, -233, -248, -263, -278, -293, -308, -323], // one doorway per role
-  certs: new THREE.Vector3(0, 0.55, -353),
-  moon: new THREE.Vector3(0, 3.5, -438),
+  arches: [-203, -218, -233, -248, -263, -278], // one doorway per role
+  certs: new THREE.Vector3(0, 0.55, -308),
+  moon: new THREE.Vector3(0, 3.5, -393),
 };
 
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
@@ -35,9 +35,9 @@ export function buildTimeline(mobile) {
     if (mobile) add(`journey${i}`, V(0, 0.5, z + 9.5), V(0, -0.9, z - 12), 0.85, i === L.arches.length - 1 ? 1.4 : 1.0, V(0, 0, -1.2));
     else add(`journey${i}`, V(0, 0.5, z + 8.8), V(-2.1, 0.7, z - 12), 0.85, i === L.arches.length - 1 ? 1.4 : 1.0, V(0, 0, -1.2));
   });
-  add('certs', V(0, 1.8, mobile ? -336.5 : -340), V(0, mobile ? 2.6 : 2.15, -353), 1.3, 1.7, V(0, 0, -0.6));
-  if (mobile) add('contact', V(0, 0.6, -370), V(0, 3.6, -408), 1.1, 0, V(0, 0.3, -2.2));
-  else add('contact', V(0, 0.6, -370), V(2.5, 2.6, -408), 1.1, 0, V(0, 0.3, -2.2));
+  add('certs', V(0, 1.8, mobile ? -291.5 : -295), V(0, mobile ? 2.6 : 2.15, -308), 1.3, 1.7, V(0, 0, -0.6));
+  if (mobile) add('contact', V(0, 0.6, -325), V(0, 3.6, -363), 1.1, 0, V(0, 0.3, -2.2));
+  else add('contact', V(0, 0.6, -325), V(2.5, 2.6, -363), 1.1, 0, V(0, 0.3, -2.2));
 
   // normalise into 0..1 segments
   let acc = 0;
