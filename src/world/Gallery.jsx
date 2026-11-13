@@ -236,7 +236,7 @@ const PLAN = [
   [0, 0, 0, 1, 2],
 ];
 function drawZones(g, t) {
-  header(g, 'STAFF VIEW  ·  LIVE', 'RED CROSS DEMO');
+  header(g, 'STAFF VIEW  ·  LIVE', 'RED CROSS');
   const step = Math.floor(t / 3.2);
   const frac = (t % 3.2) / 3.2;
   const zw = SW - 96, zh = 150;
