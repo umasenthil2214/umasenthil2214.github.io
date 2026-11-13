@@ -223,11 +223,11 @@ function drawHome(g, t) {
   g.setLineDash([]);
 }
 
-/* Red Cross demo — bands move between three zones; staff screen shows nearest station + confidence */
+/* Red Cross Disaster Project — guests move between digital rooms; staff screen shows near / moderate / far */
 const ZONES = [
-  { name: 'ENTRY', x: 48, y: 150 },
-  { name: 'ROOM A', x: 48, y: 330 },
-  { name: 'ROOM B', x: 48, y: 510 },
+  { name: 'FAMILIES', x: 48, y: 150 },
+  { name: 'SINGLE MEN', x: 48, y: 330 },
+  { name: 'SINGLE WOMEN', x: 48, y: 510 },
 ];
 const PLAN = [
   [0, 1, 1, 2, 0],
@@ -236,7 +236,7 @@ const PLAN = [
   [0, 0, 0, 1, 2],
 ];
 function drawZones(g, t) {
-  header(g, 'STAFF VIEW  ·  LIVE', 'RED CROSS');
+  header(g, 'SHELTER  ·  LIVE', 'RED CROSS');
   const step = Math.floor(t / 3.2);
   const frac = (t % 3.2) / 3.2;
   const zw = SW - 96, zh = 150;
@@ -286,9 +286,9 @@ function drawZones(g, t) {
   // confidence list
   g.font = '500 14px "JetBrains Mono"';
   bands.forEach(({ b, z, moving }, k) => {
-    const conf = moving ? 'UNCERTAIN' : frac < 0.7 ? 'MEDIUM' : 'HIGH';
+    const conf = moving ? 'UPDATING' : frac < 0.7 ? 'MODERATE' : 'NEAR';
     g.fillStyle = 'rgba(255,255,255,.55)';
-    g.fillText(`BAND ${b + 1}  →  ${ZONES[z].name}`, 48, 718 + k * 30);
+    g.fillText(`GUEST ${b + 1}  →  ${ZONES[z].name}`, 48, 718 + k * 30);
     g.textAlign = 'right';
     g.fillStyle = moving ? 'rgba(255,255,255,.35)' : '#fff';
     g.fillText(conf, SW - 48, 718 + k * 30);
@@ -296,7 +296,7 @@ function drawZones(g, t) {
   });
   g.font = '500 12px "JetBrains Mono"';
   g.fillStyle = 'rgba(255,255,255,.35)';
-  g.fillText('ESTIMATE · NEAREST STATION, NOT EXACT ROOM', 48, 862);
+  g.fillText('RSSI ESTIMATE · AUTHORIZED STAFF ONLY', 48, 862);
 }
 
 const DRAW = [drawSOS, drawZones, drawRAG, drawHome]; // same order as PROJECTS
