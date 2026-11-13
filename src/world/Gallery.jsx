@@ -223,7 +223,83 @@ function drawHome(g, t) {
   g.setLineDash([]);
 }
 
-const DRAW = [drawSOS, drawRAG, drawHome];
+/* Red Cross demo — bands move between three zones; staff screen shows nearest station + confidence */
+const ZONES = [
+  { name: 'ENTRY', x: 48, y: 150 },
+  { name: 'ROOM A', x: 48, y: 330 },
+  { name: 'ROOM B', x: 48, y: 510 },
+];
+const PLAN = [
+  [0, 1, 1, 2, 0],
+  [0, 0, 2, 2, 1],
+  [0, 2, 1, 0, 0],
+  [0, 0, 0, 1, 2],
+];
+function drawZones(g, t) {
+  header(g, 'STAFF VIEW  ·  LIVE', 'RED CROSS DEMO');
+  const step = Math.floor(t / 3.2);
+  const frac = (t % 3.2) / 3.2;
+  const zw = SW - 96, zh = 150;
+  const counts = [0, 0, 0];
+  const bands = PLAN.map((p, b) => {
+    const z = p[step % p.length];
+    const prev = p[(step + p.length - 1) % p.length];
+    counts[z]++;
+    return { b, z, moving: z !== prev && frac < 0.45 };
+  });
+  ZONES.forEach((zn, zi) => {
+    g.strokeStyle = 'rgba(255,255,255,.22)';
+    g.lineWidth = 1.5;
+    g.strokeRect(zn.x, zn.y, zw, zh);
+    g.font = '500 15px "JetBrains Mono"';
+    g.fillStyle = 'rgba(255,255,255,.55)';
+    g.fillText(zn.name, zn.x + 16, zn.y + 30);
+    g.textAlign = 'right';
+    g.fillText(`${counts[zi]} BAND${counts[zi] === 1 ? '' : 'S'}`, zn.x + zw - 16, zn.y + 30);
+    g.textAlign = 'left';
+    // gateway station
+    const gx = zn.x + zw - 40, gy = zn.y + zh - 36;
+    const pulse = (t * 0.8 + zi * 0.3) % 1;
+    g.strokeStyle = `rgba(255,255,255,${0.4 * (1 - pulse)})`;
+    g.beginPath();
+    g.arc(gx, gy, 8 + pulse * 26, 0, Math.PI * 2);
+    g.stroke();
+    g.fillStyle = '#fff';
+    g.fillRect(gx - 6, gy - 6, 12, 12);
+  });
+  bands.forEach(({ b, z, moving }) => {
+    const zn = ZONES[z];
+    const bx = zn.x + 40 + b * 62 + Math.sin(t * 1.3 + b) * 4;
+    const by = zn.y + 88 + Math.cos(t * 1.1 + b * 2) * 6;
+    g.globalAlpha = moving ? 0.35 + 0.35 * Math.abs(Math.sin(t * 6)) : 1;
+    g.fillStyle = '#fff';
+    g.beginPath();
+    g.arc(bx, by, 11, 0, Math.PI * 2);
+    g.fill();
+    g.fillStyle = '#0b0b0c';
+    g.font = '600 12px "JetBrains Mono"';
+    g.textAlign = 'center';
+    g.fillText(`${b + 1}`, bx, by + 4);
+    g.textAlign = 'left';
+    g.globalAlpha = 1;
+  });
+  // confidence list
+  g.font = '500 14px "JetBrains Mono"';
+  bands.forEach(({ b, z, moving }, k) => {
+    const conf = moving ? 'UNCERTAIN' : frac < 0.7 ? 'MEDIUM' : 'HIGH';
+    g.fillStyle = 'rgba(255,255,255,.55)';
+    g.fillText(`BAND ${b + 1}  →  ${ZONES[z].name}`, 48, 718 + k * 30);
+    g.textAlign = 'right';
+    g.fillStyle = moving ? 'rgba(255,255,255,.35)' : '#fff';
+    g.fillText(conf, SW - 48, 718 + k * 30);
+    g.textAlign = 'left';
+  });
+  g.font = '500 12px "JetBrains Mono"';
+  g.fillStyle = 'rgba(255,255,255,.35)';
+  g.fillText('ESTIMATE · NEAREST STATION, NOT EXACT ROOM', 48, 862);
+}
+
+const DRAW = [drawSOS, drawRAG, drawHome, drawZones];
 
 function Monolith({ i, pos }) {
   const root = useRef();
