@@ -84,9 +84,6 @@ export default function Contact() {
           <Magnetic className="soc" label="GitHub" href={PROFILE.github}>
             {Github}
           </Magnetic>
-          <Magnetic className="soc" label={`Call ${PROFILE.phone}`} href={PROFILE.phoneHref}>
-            {Icons.phone}
-          </Magnetic>
         </div>
         <Magnetic className="resume" label="Download résumé (PDF)" href={PROFILE.resume} download>
           <span className="resume-ic">{Icons.arrow}</span>
@@ -96,7 +93,6 @@ export default function Contact() {
       </div>
       <div className="ct-lines mono">
         <a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
-        <a href={PROFILE.phoneHref}>{PROFILE.phone}</a>
         <span className="dim">Based in {PROFILE.location}</span>
       </div>
       <footer className="foot">
