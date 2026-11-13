@@ -5,8 +5,8 @@
 export const PROFILE = {
   name: 'Uma Senthil',
   first: 'UMA',
-  role: 'Senior Mobile & IoT Software Engineer',
-  focus: 'Android · iOS · Flutter · BLE Mesh · AI / LLM',
+  role: 'Senior Embedded Firmware & Systems Software Engineer',
+  focus: 'STM32 Firmware · Telemetry · Bring-up · Test Automation',
   location: 'Canada',
   email: 'umasenthil2214@gmail.com',
   phone: '+1 (587) 990-4836',
@@ -17,56 +17,56 @@ export const PROFILE = {
 };
 
 export const ABOUT =
-  'I build production *Android,* *iOS* and cross-platform apps, and the *firmware* and connected systems behind them, from BLE Mesh wearables to private, on-premise AI assistants.';
+  'I build *embedded firmware* and the *systems software* around it: STM32 microcontrollers, custom radio protocols, gateway stations and *telemetry* pipelines, through to the backend and operator dashboards.';
 
 export const ABOUT_POINTS = [
-  'Lead code reviews and mentor developers',
-  'Work closely with hardware & firmware teams',
-  'Present to stakeholders and turn requirements into plans',
-  'Ship apps on Google Play and the Apple App Store',
+  'Command / acknowledge protocols under 100 ms',
+  'Hardware bring-up, DVT & schematic review',
+  'Bootloader & OTA with CRC-checked images',
+  'Python test kits traced to validation plans',
 ];
 
 export const GROUPS = {
-  Mobile: ['Kotlin', 'Java', 'Swift', 'Flutter', 'Jetpack Compose', 'React Native', 'Room', 'Hilt / Dagger', 'MVVM'],
-  'IoT & BLE': ['BLE', 'BLE Mesh', 'GATT', 'OTA Updates', 'TCP / UDP Sockets', 'NFC'],
-  Embedded: ['C / C++', 'STM32WB55', 'UART · SPI · I²C', 'Bootloaders', 'Hardware Bring-up'],
-  'AI & LLM': ['RAG', 'Pinecone', 'GPT-4o', 'LLaMA 3', 'vLLM', 'Embeddings'],
-  'Cloud & Backend': ['AWS', 'Supabase', 'PostgreSQL', 'Node.js', 'TypeScript', '.NET', 'PHP / MySQL'],
-  'Web & DevOps': ['React', 'Unity 3D', 'Jenkins', 'Docker', 'Git'],
+  'Embedded & Firmware': ['C / C++', 'STM32WB55', 'Cortex-M4', 'STM32CubeIDE', 'I²C · SPI · UART', 'Bootloader · OTA', 'Low-power Design'],
+  'Telemetry & Command': ['Binary Protocols', 'ACK / Retry', 'De-duplication', 'Store-and-forward', 'JSON over USB', '1 Hz Telemetry'],
+  'Hardware & Test': ['Hardware Bring-up', 'Schematic Review', 'DVT', 'Python · pyserial', 'Validation Plans', 'RSSI Bench Tests'],
+  'Links & Networking': ['BLE', 'BLE Mesh', 'GATT', 'TCP / UDP Sockets', 'NFC', 'TLS'],
+  'Ground & Data': ['Supabase', 'PostgreSQL · PostGIS', 'ArcGIS', 'Node.js · TypeScript', 'React Dashboards', 'AWS', 'Docker'],
+  'Apps & AI': ['Kotlin · Compose', 'Swift', 'Flutter', 'RAG', 'LLaMA 3 · vLLM', 'Git · Jenkins'],
 };
 export const SKILLS = Object.entries(GROUPS).flatMap(([g, ws]) => ws.map((w) => ({ w, g })));
 
-/* Four featured builds — each gets a monolith with a live animated screen */
+/* Four featured builds — each gets a monolith with a live animated screen (order matches Gallery DRAW) */
 export const PROJECTS = [
   {
-    tag: 'DBTech · IoT Wearables · 2026',
+    tag: 'DBTech · Embedded firmware · 2026',
     title: 'FASTER',
     em: 'SOS',
-    desc: 'A festival-safety wristband platform and the basis for the Red Cross Disaster Project. End-to-end SOS from the band, across a BLE Mesh network and the Android app, to the Supabase backend and responders, acknowledged in under 100 ms.',
-    stack: ['STM32WB55', 'C', 'BLE Mesh', 'Kotlin', 'Jetpack Compose', 'Room', 'Supabase'],
+    desc: 'End-to-end command and acknowledge on battery-powered STM32WB55 wristbands. A custom BLE Mesh vendor model in C carries telemetry and alerts; every SOS has an event ID, retry counter and timestamp, is acknowledged in under 100 ms, de-duplicated across the mesh, and falls back cleanly when delivery cannot be confirmed.',
+    stack: ['C', 'STM32WB55', 'BLE Mesh', 'Bootloader · OTA', 'Kotlin · Room', 'Supabase'],
   },
   {
-    tag: 'ThruLiquid · AI / LLM · 2024–26',
+    tag: 'DBTech · Gateways & sensing · 2026',
+    title: 'Red Cross',
+    em: 'Disaster Project',
+    desc: 'STM32WB55 USB gateway stations scan wristbands and stream RSSI as JSON over USB to estimate which zone each person is nearest (bench: 1.8 packets/s, about −49 dBm at 1 m), shown with Low, Medium or High confidence. Registration needs no phone, stations keep recording offline, and bands broadcast only an ID.',
+    stack: ['STM32WB55', 'USB Gateways', 'RSSI Zoning', 'Python · pyserial', 'Supabase', 'Staff Dashboards'],
+  },
+  {
+    tag: 'ThruLiquid · On-premise AI · 2024–26',
     title: 'Private AI',
     em: 'Assistant',
-    desc: 'A ChatGPT-style assistant for law firms and security teams. A RAG pipeline answers questions from confidential case files with source citations, deployed on-premise behind a private VPN.',
-    stack: ['Node.js', 'TypeScript', 'Pinecone', 'GPT-4o', 'LLaMA 3', 'vLLM', 'React'],
+    desc: 'Answers questions from confidential files with source citations. RAG pipeline in Node.js / TypeScript with Pinecone semantic search, GPT-4o and LLaMA 3 on vLLM, deployed on clients\u2019 own machines behind a private VPN so data never leaves the network.',
+    stack: ['Node.js', 'TypeScript', 'Pinecone', 'GPT-4o', 'LLaMA 3 · vLLM', 'React'],
     link: 'https://github.com/umasenthil2214/uma-thruliquid-PrivateAI',
   },
   {
-    tag: 'Levven Electronics · Smart Home · 2021–24',
+    tag: 'Levven Electronics · Device protocols · 2021–24',
     title: 'Levven',
     em: 'Controls',
-    desc: 'One app for lights, dimmers and fans. Talks to devices over BLE and local Wi-Fi sockets at home, and switches to AWS cloud automatically when away. Includes OTA gateway updates.',
-    stack: ['Flutter', 'Dart', 'Kotlin', 'BLE', 'Wi-Fi Sockets', 'AWS', 'Jenkins'],
+    desc: 'Control app for lights, dimmers and fans that talks to devices over BLE and local Wi-Fi sockets at home and fails over to AWS cloud when away. Defined BLE and gateway protocols with the firmware team and shipped OTA gateway updates with validation and error recovery.',
+    stack: ['BLE', 'Wi-Fi Sockets', 'OTA Updates', 'AWS', 'Flutter', 'Kotlin'],
     link: 'https://apps.apple.com/ca/app/levven-controls/id1436898660',
-  },
-  {
-    tag: 'DBTech · FASTER · Red Cross · 2026',
-    title: 'Red Cross',
-    em: 'Disaster Project',
-    desc: 'FASTER for people without a phone. Staff register each person at an entry desk and give them a wristband; three gateway stations estimate which area each band is nearest, shown live on staff screens with Low, Medium or High confidence. Stations keep recording through internet outages, and bands broadcast only an ID, never a name.',
-    stack: ['STM32WB55', 'BLE', 'USB Gateways', 'RSSI Zoning', 'Supabase', 'Staff Dashboards'],
   },
 ];
 
@@ -74,22 +74,22 @@ export const PROJECTS = [
 export const STATS = [
   { label: 'Years building software', value: 15, suffix: '+', h: 4.6 },
   { label: 'Companies', value: 8, suffix: '', h: 3.2 },
-  { label: 'Games hosted on one site', value: 1000, suffix: '+', h: 5.0 },
+  { label: 'Validation tests automated', value: 10, suffix: '', h: 3.8 },
   { label: 'SOS acknowledgement', value: 100, prefix: '<', suffix: 'ms', h: 2.4 },
 ];
 
 export const HONORS = [
   { big: 'Red Cross Disaster Project', small: 'FASTER phone-free registration · DBTech' },
-  { big: 'Apps on Google Play & App Store', small: 'Levven · Stash · MyMilan' },
+  { big: 'SOS acknowledged in under 100 ms', small: 'BLE Mesh command / acknowledge · DBTech' },
 ];
 
 /* The corridor: one lit doorway per role, newest first */
 export const JOURNEY = [
-  { year: '2026', role: 'Senior Embedded Firmware & Mobile Engineer', place: 'DBTech · Texas (remote)', note: '2026 — present · FASTER safety wearable, firmware to cloud', tech: ['STM32WB55 · C', 'BLE Mesh', 'OTA Bootloader', 'Kotlin · Room', 'Supabase'] },
-  { year: '2026', role: 'Red Cross Disaster Project', place: 'DBTech · FASTER', note: 'Phone-free registration · 4 bands across 3 gateway zones', tech: ['USB Gateways', 'RSSI Zoning', 'Confidence Estimates', 'Offline-tolerant'] },
-  { year: '2024', role: 'Senior Mobile Developer & AI Consultant', place: 'ThruLiquid Inc · Mississauga', note: '2024 — 2026 · Private, on-premise AI assistants', tech: ['RAG', 'Pinecone', 'GPT-4o · LLaMA 3', 'Node.js · TypeScript', 'Kotlin · React Native'] },
-  { year: '2021', role: 'Senior Mobile Application Developer', place: 'Levven Electronics · Edmonton', note: '2021 — 2024 · Smart-home control app · mentoring', tech: ['Flutter', 'Kotlin', 'BLE', 'Wi-Fi Sockets', 'AWS', 'OTA'] },
-  { year: '2019', role: 'Senior Android Developer — Security & NFC', place: 'Elsi Inc (Stash) · Edmonton', note: '2019 — 2021 · Offline NFC password manager', tech: ['NFC', 'AES', 'RSA', 'SHA-256', 'Android'] },
+  { year: '2026', role: 'Senior Embedded Firmware & Mobile Engineer', place: 'DBTech · Texas (remote)', note: '2026 — present · Firmware, protocols & telemetry for FASTER', tech: ['C · STM32WB55', 'BLE Mesh', 'Bootloader · OTA', 'Bring-up & DVT', 'Python Test Kits'] },
+  { year: '2026', role: 'Red Cross Disaster Project', place: 'DBTech · FASTER', note: 'Gateway stations · RSSI zone estimates · offline-tolerant', tech: ['USB Gateways', 'RSSI Zoning', 'JSON over USB', 'Confidence Estimates'] },
+  { year: '2024', role: 'Senior Mobile Developer & AI Consultant', place: 'ThruLiquid Inc · Mississauga', note: '2024 — 2026 · Private, on-premise AI · real-time data clients', tech: ['RAG', 'Pinecone', 'LLaMA 3 · vLLM', 'On-prem · VPN', 'WebSockets'] },
+  { year: '2021', role: 'Senior Mobile Application Developer', place: 'Levven Electronics · Edmonton', note: '2021 — 2024 · BLE & gateway protocols · OTA · mentoring', tech: ['BLE', 'Wi-Fi Sockets', 'OTA Updates', 'AWS Fail-over', 'Flutter · Kotlin'] },
+  { year: '2019', role: 'Senior Android Developer — Security & NFC', place: 'Elsi Inc (Stash) · Edmonton', note: '2019 — 2021 · Hardware-backed, offline password manager', tech: ['NFC', 'AES · RSA', 'SHA-256', 'Air-gapped Storage', 'Pen Testing'] },
   { year: '2018', role: 'Senior Mobile Developer', place: 'ThruLiquid Inc · Toronto', note: '2018 · Android, iOS & web apps', tech: ['Ionic', 'React', 'Node.js', 'REST APIs'] },
 ];
 
