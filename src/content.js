@@ -9,8 +9,6 @@ export const PROFILE = {
   focus: 'STM32 Firmware · Telemetry · Bring-up · Test Automation',
   location: 'Canada',
   email: 'umasenthil2214@gmail.com',
-  phone: '+1 (587) 990-4836',
-  phoneHref: 'tel:+15879904836',
   linkedin: 'https://www.linkedin.com/in/umamaheswari-senthil-2ab26949',
   github: 'https://github.com/umasenthil2214',
   resume: 'Uma_Senthil_Resume.pdf',
