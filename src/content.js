@@ -62,9 +62,9 @@ export const PROJECTS = [
     link: 'https://apps.apple.com/ca/app/levven-controls/id1436898660',
   },
   {
-    tag: 'DBTech · FASTER · Red Cross demo · 2026',
+    tag: 'DBTech · FASTER · Red Cross · 2026',
     title: 'Red Cross',
-    em: 'Demo',
+    em: 'Disaster Project',
     desc: 'FASTER for people without a phone. Staff register each person at an entry desk and give them a wristband; three gateway stations estimate which area each band is nearest, shown live on staff screens with Low, Medium or High confidence. Stations keep recording through internet outages, and bands broadcast only an ID, never a name.',
     stack: ['STM32WB55', 'BLE', 'USB Gateways', 'RSSI Zoning', 'Supabase', 'Staff Dashboards'],
   },
@@ -86,7 +86,7 @@ export const HONORS = [
 /* The corridor: one lit doorway per role, newest first */
 export const JOURNEY = [
   { year: '2026', role: 'Senior Embedded Firmware & Mobile Engineer', place: 'DBTech · Texas (remote)', note: '2026 — present · FASTER safety wearable, firmware to cloud', tech: ['STM32WB55 · C', 'BLE Mesh', 'OTA Bootloader', 'Kotlin · Room', 'Supabase'] },
-  { year: '2026', role: 'Red Cross Demo — FASTER without a phone', place: 'DBTech · FASTER', note: 'Phone-free registration · 4 bands across 3 gateway zones', tech: ['USB Gateways', 'RSSI Zoning', 'Confidence Estimates', 'Offline-tolerant'] },
+  { year: '2026', role: 'Red Cross Disaster Project', place: 'DBTech · FASTER', note: 'Phone-free registration · 4 bands across 3 gateway zones', tech: ['USB Gateways', 'RSSI Zoning', 'Confidence Estimates', 'Offline-tolerant'] },
   { year: '2024', role: 'Senior Mobile Developer & AI Consultant', place: 'ThruLiquid Inc · Mississauga', note: '2024 — 2026 · Private, on-premise AI assistants', tech: ['RAG', 'Pinecone', 'GPT-4o · LLaMA 3', 'Node.js · TypeScript', 'Kotlin · React Native'] },
   { year: '2021', role: 'Senior Mobile Application Developer', place: 'Levven Electronics · Edmonton', note: '2021 — 2024 · Smart-home control app · mentoring', tech: ['Flutter', 'Kotlin', 'BLE', 'Wi-Fi Sockets', 'AWS', 'OTA'] },
   { year: '2019', role: 'Senior Android Developer — Security & NFC', place: 'Elsi Inc (Stash) · Edmonton', note: '2019 — 2021 · Offline NFC password manager', tech: ['NFC', 'AES', 'RSA', 'SHA-256', 'Android'] },
@@ -95,7 +95,7 @@ export const JOURNEY = [
 
 /* Orbiting cards: products built across the career */
 export const BUILDS = [
-  ['DBTech · 2026', 'Red Cross demo: phone-free registration'],
+  ['DBTech · 2026', 'Red Cross Disaster Project'],
   ['DBTech · 2026', 'FASTER safety wristband'],
   ['ThruLiquid · 2024', 'Private AI legal assistant'],
   ['Levven · 2021', 'Levven Controls smart home'],
