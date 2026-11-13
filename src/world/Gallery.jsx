@@ -299,7 +299,7 @@ function drawZones(g, t) {
   g.fillText('ESTIMATE · NEAREST STATION, NOT EXACT ROOM', 48, 862);
 }
 
-const DRAW = [drawSOS, drawRAG, drawHome, drawZones];
+const DRAW = [drawSOS, drawZones, drawRAG, drawHome]; // same order as PROJECTS
 
 function Monolith({ i, pos }) {
   const root = useRef();

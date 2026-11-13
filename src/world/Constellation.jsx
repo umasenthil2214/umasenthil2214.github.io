@@ -89,7 +89,14 @@ export default function Constellation() {
   useFrame((s, dt) => {
     const d = Math.abs(s.camera.position.z - L.skills.z);
     root.current.visible = d < 30;
-    if (!root.current.visible) return;
+    if (!root.current.visible) {
+      // make sure no skill label lingers over other sections
+      if (lastGroup.current !== 'hidden') {
+        (store.labels.skills || []).forEach((el) => el && (el.style.opacity = '0'));
+        lastGroup.current = 'hidden';
+      }
+      return;
+    }
     const t = s.clock.elapsedTime;
     const g = spin.current;
     g.rotation.y += dt * 0.08;
