@@ -279,7 +279,7 @@ export default function Overlay({ ready }) {
           `journey${i}`,
           I[`journey${i}`],
           'pnl-journey',
-          <>
+          <div className="jy-card">
             <span className="mono dim">(05) The Journey — 0{i + 1} / 0{JOURNEY.length}</span>
             <div className="jy-year">
               {j.year.split('').map((c, k) => (
@@ -291,7 +291,7 @@ export default function Overlay({ ready }) {
             <div className="jy-role">{j.role}</div>
             <div className="jy-place">{j.place}</div>
             <div className="mono dim jy-note">{j.note}</div>
-          </>
+          </div>
         )
       )}
 
@@ -303,7 +303,7 @@ export default function Overlay({ ready }) {
         <>
           <span className="mono dim">(06) Built across the years</span>
           <h2 className="big">
-            <Words text="Eight *products*" />
+            <Words text="Nine *products*" />
           </h2>
         </>,
         0.4
