@@ -1,6 +1,6 @@
 # Uma Senthil — Portfolio
 
-Portfolio of **Uma Senthil**, Senior Mobile & IoT Software Engineer (Android · iOS · Flutter · BLE Mesh & Embedded Firmware · AI / LLM Systems).
+Portfolio of **Uma Senthil**, Senior Embedded Firmware & Systems Software Engineer (STM32 firmware · telemetry · hardware bring-up · test automation).
 
 An immersive 3D portfolio. Scrolling flies the camera through a dark, misty world, one room per section:
 
