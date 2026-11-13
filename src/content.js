@@ -36,13 +36,13 @@ export const GROUPS = {
 };
 export const SKILLS = Object.entries(GROUPS).flatMap(([g, ws]) => ws.map((w) => ({ w, g })));
 
-/* Three featured builds — each gets a monolith with a live animated screen */
+/* Four featured builds — each gets a monolith with a live animated screen */
 export const PROJECTS = [
   {
     tag: 'DBTech · IoT Wearables · 2026',
     title: 'FASTER',
     em: 'SOS',
-    desc: 'A festival-safety wristband platform demonstrated to the Red Cross. End-to-end SOS from the band, across a BLE Mesh network and the Android app, to the Supabase backend and responders, acknowledged in under 100 ms.',
+    desc: 'A festival-safety wristband platform and the basis for a Red Cross demonstration. End-to-end SOS from the band, across a BLE Mesh network and the Android app, to the Supabase backend and responders, acknowledged in under 100 ms.',
     stack: ['STM32WB55', 'C', 'BLE Mesh', 'Kotlin', 'Jetpack Compose', 'Room', 'Supabase'],
   },
   {
@@ -61,6 +61,13 @@ export const PROJECTS = [
     stack: ['Flutter', 'Dart', 'Kotlin', 'BLE', 'Wi-Fi Sockets', 'AWS', 'Jenkins'],
     link: 'https://apps.apple.com/ca/app/levven-controls/id1436898660',
   },
+  {
+    tag: 'DBTech · FASTER · Red Cross demo · 2026',
+    title: 'Red Cross',
+    em: 'Demo',
+    desc: 'FASTER for people without a phone. Staff register each person at an entry desk and give them a wristband; three gateway stations estimate which area each band is nearest, shown live on staff screens with Low, Medium or High confidence. Stations keep recording through internet outages, and bands broadcast only an ID, never a name.',
+    stack: ['STM32WB55', 'BLE', 'USB Gateways', 'RSSI Zoning', 'Supabase', 'Staff Dashboards'],
+  },
 ];
 
 /* Rises as light towers. Values are taken directly from the résumé. */
@@ -72,7 +79,7 @@ export const STATS = [
 ];
 
 export const HONORS = [
-  { big: 'Demonstrated to the Red Cross', small: 'FASTER safety wearable · DBTech' },
+  { big: 'Red Cross demonstration', small: 'FASTER phone-free registration · DBTech' },
   { big: 'Apps on Google Play & App Store', small: 'Levven · Stash · MyMilan' },
 ];
 
@@ -86,10 +93,12 @@ export const JOURNEY = [
   { year: '2021', role: 'Senior Mobile Application Developer', place: 'Levven Electronics · Edmonton', note: '2021 — 2024 · Smart-home app · BLE, Wi-Fi sockets, AWS · mentoring' },
   { year: '2024', role: 'Senior Mobile Developer & AI Consultant', place: 'ThruLiquid Inc · Mississauga', note: '2024 — 2026 · Private RAG assistants · Kotlin & React Native apps' },
   { year: '2026', role: 'Senior Embedded Firmware & Mobile Engineer', place: 'DBTech · Texas (remote)', note: '2026 — present · FASTER BLE Mesh wearable · STM32WB55 · Android · Supabase' },
+  { year: '2026', role: 'Red Cross Demo — FASTER without a phone', place: 'DBTech · FASTER', note: 'Phone-free registration · 4 bands across 3 gateway zones · nearest-station estimates with confidence · keeps working offline' },
 ];
 
 /* Orbiting cards: products built across the career */
 export const BUILDS = [
+  ['DBTech · 2026', 'Red Cross demo: phone-free registration'],
   ['DBTech · 2026', 'FASTER safety wristband'],
   ['ThruLiquid · 2024', 'Private AI legal assistant'],
   ['Levven · 2021', 'Levven Controls smart home'],
