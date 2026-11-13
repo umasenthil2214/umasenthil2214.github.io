@@ -42,7 +42,7 @@ export const PROJECTS = [
     tag: 'DBTech · IoT Wearables · 2026',
     title: 'FASTER',
     em: 'SOS',
-    desc: 'A festival-safety wristband platform and the basis for a Red Cross demonstration. End-to-end SOS from the band, across a BLE Mesh network and the Android app, to the Supabase backend and responders, acknowledged in under 100 ms.',
+    desc: 'A festival-safety wristband platform and the basis for the Red Cross Disaster Project. End-to-end SOS from the band, across a BLE Mesh network and the Android app, to the Supabase backend and responders, acknowledged in under 100 ms.',
     stack: ['STM32WB55', 'C', 'BLE Mesh', 'Kotlin', 'Jetpack Compose', 'Room', 'Supabase'],
   },
   {
@@ -79,7 +79,7 @@ export const STATS = [
 ];
 
 export const HONORS = [
-  { big: 'Red Cross demonstration', small: 'FASTER phone-free registration · DBTech' },
+  { big: 'Red Cross Disaster Project', small: 'FASTER phone-free registration · DBTech' },
   { big: 'Apps on Google Play & App Store', small: 'Levven · Stash · MyMilan' },
 ];
 
