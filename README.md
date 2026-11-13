@@ -13,7 +13,7 @@ An immersive 3D portfolio. Scrolling flies the camera through a dark, misty worl
 | **Towers of light** | Career numbers and highlights, plus education |
 | **Corridor of time** | One lit doorway per role, 2011 → 2026 |
 | **Product orbit** | Eight products built across the career |
-| **Horizon** | Contact: email, LinkedIn, GitHub, phone and a downloadable résumé |
+| **Horizon** | Contact: email, LinkedIn, GitHub and a downloadable résumé |
 
 ## Run locally
 
