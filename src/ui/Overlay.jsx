@@ -291,6 +291,15 @@ export default function Overlay({ ready }) {
             <div className="jy-role">{j.role}</div>
             <div className="jy-place">{j.place}</div>
             <div className="mono dim jy-note">{j.note}</div>
+            {j.tech && (
+              <ul className="jy-tech">
+                {j.tech.map((t, k) => (
+                  <li key={t} style={{ transitionDelay: `${0.35 + k * 0.05}s` }}>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         )
       )}
