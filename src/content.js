@@ -42,15 +42,15 @@ export const PROJECTS = [
     tag: 'DBTech · Embedded firmware · 2026',
     title: 'FASTER',
     em: 'SOS',
-    desc: 'End-to-end command and acknowledge on battery-powered STM32WB55 wristbands. A custom BLE Mesh vendor model in C carries telemetry and alerts; every SOS has an event ID, retry counter and timestamp, is acknowledged in under 100 ms, de-duplicated across the mesh, and falls back cleanly when delivery cannot be confirmed.',
+    desc: 'Wearable safety platform for festivals and indoor disaster shelters, demonstrated to the Red Cross. On battery-powered STM32WB55 wristbands, a custom BLE Mesh vendor model in C carries telemetry and alerts; every SOS has an event ID, retry counter and timestamp, is acknowledged in under 100 ms, de-duplicated across the mesh, and falls back cleanly when delivery cannot be confirmed.',
     stack: ['C', 'STM32WB55', 'BLE Mesh', 'Bootloader · OTA', 'Kotlin · Room', 'Supabase'],
   },
   {
-    tag: 'DBTech · Gateways & sensing · 2026',
+    tag: 'DBTech · Disaster shelters · Red Cross · 2026',
     title: 'Red Cross',
     em: 'Disaster Project',
-    desc: 'STM32WB55 USB gateway stations scan wristbands and stream RSSI as JSON over USB to estimate which zone each person is nearest (bench: 1.8 packets/s, about −49 dBm at 1 m), shown with Low, Medium or High confidence. Registration needs no phone, stations keep recording offline, and bands broadcast only an ID.',
-    stack: ['STM32WB55', 'USB Gateways', 'RSSI Zoning', 'Python · pyserial', 'Supabase', 'Staff Dashboards'],
+    desc: 'FASTER for open-floor shelters such as school gyms, demonstrated to the Red Cross. Guests register by QR code, kiosk or reception desk, alone or as a family, and every guest, including each child, gets a wristband. My USB dongle firmware and Local Bridge app set up each band over Bluetooth without a phone, and gateway firmware streams RSSI so staff see each guest as near, moderate or far, with history.',
+    stack: ['STM32WB55', 'USB Dongle', 'Local Bridge App', 'BLE Provisioning', 'RSSI Tracking', 'Supabase'],
   },
   {
     tag: 'ThruLiquid · On-premise AI · 2024–26',
@@ -79,14 +79,14 @@ export const STATS = [
 ];
 
 export const HONORS = [
-  { big: 'Red Cross Disaster Project', small: 'FASTER phone-free registration · DBTech' },
+  { big: 'Demonstrated to the Red Cross', small: 'FASTER disaster-shelter system · DBTech' },
   { big: 'SOS acknowledged in under 100 ms', small: 'BLE Mesh command / acknowledge · DBTech' },
 ];
 
 /* The corridor: one lit doorway per role, newest first */
 export const JOURNEY = [
   { year: '2026', role: 'Senior Embedded Firmware & Mobile Engineer', place: 'DBTech · Texas (remote)', note: '2026 — present · Firmware, protocols & telemetry for FASTER', tech: ['C · STM32WB55', 'BLE Mesh', 'Bootloader · OTA', 'Bring-up & DVT', 'Python Test Kits'] },
-  { year: '2026', role: 'Red Cross Disaster Project', place: 'DBTech · FASTER', note: 'Gateway stations · RSSI zone estimates · offline-tolerant', tech: ['USB Gateways', 'RSSI Zoning', 'JSON over USB', 'Confidence Estimates'] },
+  { year: '2026', role: 'Red Cross Disaster Project', place: 'DBTech · FASTER · demonstrated to the Red Cross', note: 'Indoor disaster shelters · band setup at reception · RSSI tracking', tech: ['USB Dongle', 'Local Bridge App', 'BLE Provisioning', 'RSSI Tracking'] },
   { year: '2024', role: 'Senior Mobile Developer & AI Consultant', place: 'ThruLiquid Inc · Mississauga', note: '2024 — 2026 · Private, on-premise AI · real-time data clients', tech: ['RAG', 'Pinecone', 'LLaMA 3 · vLLM', 'On-prem · VPN', 'WebSockets'] },
   { year: '2021', role: 'Senior Mobile Application Developer', place: 'Levven Electronics · Edmonton', note: '2021 — 2024 · BLE & gateway protocols · OTA · mentoring', tech: ['BLE', 'Wi-Fi Sockets', 'OTA Updates', 'AWS Fail-over', 'Flutter · Kotlin'] },
   { year: '2019', role: 'Senior Android Developer — Security & NFC', place: 'Elsi Inc (Stash) · Edmonton', note: '2019 — 2021 · Hardware-backed, offline password manager', tech: ['NFC', 'AES · RSA', 'SHA-256', 'Air-gapped Storage', 'Pen Testing'] },
