@@ -61,7 +61,7 @@ export default function CertOrbit() {
   const cards = useRef([]);
   const [hover, setHover] = useState(-1);
   const texes = useMemo(() => CERTS.map(([a, b], i) => cardTexture(a, b, i)), []);
-  const R = store.mobile ? 2.7 : 4.3;
+  const R = store.mobile ? 3.1 : 5.2;
   const tmp = useMemo(() => new THREE.Vector3(), []);
   const lift = useRef(CERTS.map(() => 0));
 

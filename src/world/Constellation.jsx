@@ -88,7 +88,7 @@ export default function Constellation() {
 
   useFrame((s, dt) => {
     const d = Math.abs(s.camera.position.z - L.skills.z);
-    root.current.visible = d < 55;
+    root.current.visible = d < 30;
     if (!root.current.visible) return;
     const t = s.clock.elapsedTime;
     const g = spin.current;
@@ -168,8 +168,9 @@ export default function Constellation() {
       const y = (-v.y * 0.5 + 0.5) * h;
       const depth = clamp((18 - dist) / 8, 0, 1); // nearer = brighter
       const on = grp && SKILLS[i].g === grp;
-      const o = sv * (grp ? (on ? 1 : 0.12) : 0.25 + depth * 0.75);
-      el.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -140%) scale(${0.75 + depth * 0.45 + (on ? 0.2 : 0)})`;
+      const front = depth > 0.45; // only the near hemisphere gets readable labels
+      const o = sv * (grp ? (on ? 1 : 0.06) : front ? 0.35 + depth * 0.65 : 0.05);
+      el.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -140%) scale(${0.8 + depth * 0.3 + (on ? 0.15 : 0)})`;
       el.style.opacity = o.toFixed(3);
       el.classList.toggle('hl', !!on);
     });
